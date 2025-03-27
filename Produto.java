@@ -1,63 +1,37 @@
 public class Produto {
     private int id;
-    private String name;
-    private String desc;
-    private double price;
-    private int ammount;
-    private int categoryID;
+    private String nome;
+    private String descricao;
+    private double preco;
+    private int quantidade;
 
-    public Produto(int id, String name, String desc, double price, int ammount, int categoryID) {
-        this.id = id;
-        this.name = name;
-        this.desc = desc;
-        this.price = price;
-        this.ammount = ammount;
-        this.categoryID = categoryID;
+    private static int contadorId = 1; // Gera IDs automaticamente
+
+    public Produto(String nome, String descricao, double preco, int quantidade) {
+        this.id = contadorId++;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.quantidade = quantidade;
     }
 
-    // Getters do Produto
     public int getId() {
         return id;
     }
 
     public String getNome() {
-        return name;
+        return nome;
     }
 
     public String getDescricao() {
-        return desc;
+        return descricao;
     }
 
     public double getPreco() {
-        return price;
+        return preco;
     }
 
     public int getQuantidade() {
-        return ammount;
-    }
-
-    public int getCategoriaId() {
-        return categoryID;
-    }
-
-    // Setters do Produto
-    public void setNome(String name) {
-        this.name = name;
-    }
-
-    public void setDescricao(String desc) {
-        this.desc = desc;
-    }
-
-    public void setPreco(double price) {
-        this.price = price;
-    }
-
-    public void setQuantidade(int ammount) {
-        this.ammount = ammount;
-    }
-
-    public void setCategoriaId(int categoryID) {
-        this.categoryID = categoryID;
+        return quantidade;
     }
 }
